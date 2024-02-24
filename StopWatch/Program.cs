@@ -9,7 +9,9 @@ namespace StopWatch
             var stopwatch = new StopWatch();
             while(true)
             {
-                Console.WriteLine("START - start StopWatch | STOP - stop StopWatch| END - finish program)! \n");
+                Console.WriteLine("=======================================================================");
+                Console.WriteLine("START - start StopWatch | STOP - stop StopWatch | END - finish program");
+                Console.WriteLine("=======================================================================");
                 var input = Console.ReadLine()?.ToLower();
                 switch (input)
                 {

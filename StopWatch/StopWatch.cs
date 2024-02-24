@@ -28,7 +28,7 @@ namespace StopWatch
                     this.Result = DateTime.Now - StartTime;
                     this.IsRunning = false;
                     Console.WriteLine("StopWatch ended");
-                    Console.WriteLine($"Timespan is: {Math.Round(Result.TotalSeconds, 2)} seconds!!!");
+                    Console.WriteLine($"Timespan is: {Math.Round(Result.TotalSeconds, 2)} seconds!\n");
                 }
                 else
                 {
