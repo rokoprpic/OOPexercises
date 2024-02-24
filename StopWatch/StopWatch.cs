@@ -2,40 +2,37 @@
 
 namespace StopWatch
 {
-    internal partial class Program
+    public class StopWatch
     {
-        public class StopWatch
+        private DateTime StartTime { get; set; }
+        private TimeSpan Result = TimeSpan.Zero;
+        private bool IsRunning = false;
+        public void Start()
         {
-            private DateTime StartTime { get; set; }
-            private TimeSpan Result = TimeSpan.Zero;
-            private bool IsRunning = false;
-            public void Start()
+            if (!IsRunning)
             {
-                if(!IsRunning)
-                {
-                    this.StartTime = DateTime.Now;
-                    this.IsRunning = true;
-                    Console.WriteLine("StopWatch started");
-                }
-                else
-                {
-                    Console.WriteLine("StopWatch is already running!");
-                }
+                this.StartTime = DateTime.Now;
+                this.IsRunning = true;
+                Console.WriteLine("StopWatch started");
             }
-            public void Stop()
+            else
             {
-                if(IsRunning) {
-                    this.Result = DateTime.Now - StartTime;
-                    this.IsRunning = false;
-                    Console.WriteLine("StopWatch ended");
-                    Console.WriteLine($"Timespan is: {Math.Round(Result.TotalSeconds, 2)} seconds!\n");
-                }
-                else
-                {
-                    Console.WriteLine("Need to start StopWatch!");
-                }
+                Console.WriteLine("StopWatch is already running!");
+            }
+        }
+        public void Stop()
+        {
+            if (IsRunning)
+            {
+                this.Result = DateTime.Now - StartTime;
+                this.IsRunning = false;
+                Console.WriteLine("StopWatch ended");
+                Console.WriteLine($"Timespan is: {Math.Round(Result.TotalSeconds, 2)} seconds!\n");
+            }
+            else
+            {
+                Console.WriteLine("Need to start StopWatch!");
             }
         }
     }
 }
-
